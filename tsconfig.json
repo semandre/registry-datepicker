@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "registry-datepicker": [
+        "dist/registry-datepicker"
+      ],
+      "registry-datepicker/*": [
+        "dist/registry-datepicker/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
