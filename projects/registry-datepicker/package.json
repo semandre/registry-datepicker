@@ -2,7 +2,11 @@
   "name": "registry-datepicker",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
+    "@angular/common": "^9.0.2",
+    "@angular/core": "^9.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/semandre/registry-datepicker.git"
   }
 }
