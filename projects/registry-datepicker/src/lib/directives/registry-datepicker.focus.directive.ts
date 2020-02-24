@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2, AfterViewInit, Input } from '@angular/core';
+import { Directive, ElementRef, AfterViewInit, Input } from '@angular/core';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
@@ -6,16 +6,14 @@ import { Directive, ElementRef, Renderer2, AfterViewInit, Input } from '@angular
 })
 
 export class FocusDirective implements AfterViewInit {
-  @Input('mydrpfocus') value: string;
+  @Input('mydrpfocus') value: boolean;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
-  }
+  constructor(private el: ElementRef) {}
 
-  // Focus to element: if value 0 = don't set focus, 1 = set only focus
+  // Focus to element: if value === false = don't set focus, true = set only focus
   ngAfterViewInit() {
-    if (this.value === '0') {
-      return;
+    if (!this.value) {
+      this.el.nativeElement.focus()
     }
-    this.renderer.selectRootElement(this.el.nativeElement).focus();
   }
 }
